@@ -1,6 +1,6 @@
 ## api
 
-#### Получить все события.
+### Получить все события.
 ```
 POST /api/event/getAll
 ```
@@ -14,7 +14,8 @@ POST /api/event/getAll
         gender: 1, // пол участников события. см. entities юзер
         text: "поисковый запрос",
         lat: 0,
-        lng: 0
+        lng: 0,
+        time: "all" // события: all - все, today - сегодня, past - прошедшие, upcoming - будущие
 ```
 Ответ:
 ```js
@@ -26,9 +27,7 @@ POST /api/event/getAll
 }
 ```
 
-
-
-#### Получить одно событие.
+### Получить одно событие.
 ```
 POST /api/event/getOne
 ```
@@ -44,4 +43,18 @@ POST /api/event/getOne
 }
 ```
 
-
+### Получить одно событие.
+```
+POST /api/event/getFavorite
+```
+Параметры:
+```js
+        
+```
+Ответ:
+```js
+{
+    "status": "success",
+    "event": объект <Событие>
+}
+```
