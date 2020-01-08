@@ -2,7 +2,7 @@
 
 ### Получить все события.
 ```
-POST /api/event/getAll
+GET /api/event/getAll
 ```
 Параметры: см. Parameters для получения всех событий
 
@@ -18,7 +18,7 @@ POST /api/event/getAll
 
 ### Получить одно событие.
 ```
-POST /api/event/getOne
+GET /api/event/getOne
 ```
 Параметры:
 ```js
@@ -34,7 +34,7 @@ POST /api/event/getOne
 
 ### Получить все события в избранном.
 ```
-POST /api/event/getFavorite
+GET /api/event/getFavorite
 ```
 Параметры: см. Parameters для получения всех событий
 
@@ -50,7 +50,7 @@ POST /api/event/getFavorite
 
 ### Получить мои события. (в которых я участвую, а также которые создал)
 ```
-POST /api/event/getMyEvents
+GET /api/event/getMyEvents
 ```
 Параметры: см. Parameters для получения всех событий
 
@@ -63,3 +63,47 @@ POST /api/event/getMyEvents
     ]
 }
 ```
+
+### Подать заявку на участие в событии
+```
+POST /api/event/apply
+```
+Параметры: 
+```js
+    event_id: 1 // id события
+```
+Ответ:
+```js
+{
+    "status": "success",
+    "event": объект <Событие>
+}
+```
+
+### Создать событие
+```
+POST /api/event/apply
+```
+Параметры: 
+```js
+    event_id: 1 // id события
+```
+Ответ:
+```js
+{
+    "status": "success",
+    "event": объект <Событие>
+}
+```
+
+[[_TOC_]]
+
+
+
+
+
+
+
+
+
+
