@@ -11,5 +11,5 @@
         text: "поисковый запрос",
         lat: 0,
         lng: 0,
-        time: "all" // события: all - все, today - сегодня, past - прошедшие, upcoming - будущие
+        type: "all" // типы событий: all - все, today - сегодня, past - прошедшие, upcoming - будущие, mine - созданные мною
 ```
