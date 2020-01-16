@@ -141,7 +141,10 @@ export default class Event extends Model {
     }
 
     static isOwnerOrMember(status){
-        return [Event.statuses.confirmed, Event.statuses.owner].includes(status);
+        return [Event.statuses.confirmed, Event.statuses.owner].includes(''+status);
+    }
+    static applied(status){
+        return ''+status === Event.statuses.applied;
     }
 
     static foodString(valuesArray){

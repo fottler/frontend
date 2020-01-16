@@ -1,14 +1,13 @@
 import SSList from "@/core/SSList";
-import ArrayUtil from "@/core/utilities/ArrayUtil";
-import ListConfig from "@/config/ListConfig";
 import {getField} from "vuex-map-fields";
+import Event from "@/modules/event/models/Event";
 
 const getters = {
     foodString(state){
-        return ArrayUtil.chosenOptionsToString(ListConfig.food, state.newEvent.food_preferences);
+        return Event.foodString(state.newEvent.food_preferences);
     },
     drinksString(state){
-        return ArrayUtil.chosenOptionsToString(ListConfig.drinks, state.newEvent.drink_preferences);
+        return Event.drinksString(state.newEvent.drink_preferences);
     },
     membersString(state){
         const

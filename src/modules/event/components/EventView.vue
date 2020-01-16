@@ -38,7 +38,7 @@
                    class="button yellow-button wide"
                    @click.prevent="$emit('open-chat', event.id)">открыть чат</a>
 
-                <span v-else-if="event.status === statuses.applied">Ваша заявка на рассмотрении</span>
+                <span v-else-if="applied">Ваша заявка на рассмотрении</span>
 
                 <a v-else
                    href="#"
@@ -67,6 +67,9 @@
             },
             isOwnerOrMember(){
                 return Event.isOwnerOrMember(this.event.status);
+            },
+            applied(){
+                return Event.applied(this.event.status);
             },
             beautifulDate(){
                 return DateUtil.toHumanReadable(this.event.datetime);

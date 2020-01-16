@@ -8,9 +8,13 @@ export default class ArrayUtil {
         if (index !== -1) array.splice(index, 1);
     }
     static getChosenOptions(options, chosen, keyProperty = 'id'){
-        return Object.values(options).filter((item)=>
-            chosen.includes(item[keyProperty])
-        );
+        const chosenStr = chosen.map(item => ''+item);
+
+        return Object
+            .values(options)
+            .filter((item)=>
+                chosenStr.includes(''+item[keyProperty])
+            );
     }
     static chosenOptionsToString(options, chosen, keyProperty = 'id', valueProperty = 'title'){
         return ArrayUtil.getChosenOptions(options, chosen, keyProperty)

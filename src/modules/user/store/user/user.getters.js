@@ -2,6 +2,7 @@ import {getField} from "vuex-map-fields";
 import ArrayUtil from "@/core/utilities/ArrayUtil";
 import ListConfig from "@/config/ListConfig";
 import User from "@/modules/user/models/User";
+import Event from "@/modules/event/models/Event";
 
 const getters = {
     //user
@@ -16,10 +17,10 @@ const getters = {
     },
     //editable user
     foodString(state){
-        return ArrayUtil.chosenOptionsToString(ListConfig.food, state.editableUser.food_preferences);
+        return Event.foodString(state.editableUser.food_preferences);
     },
     drinksString(state){
-        return ArrayUtil.chosenOptionsToString(ListConfig.drinks, state.editableUser.drink_preferences);
+        return Event.drinksString(state.editableUser.drink_preferences);
     },
 
 
