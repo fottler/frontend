@@ -7,7 +7,9 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:e2e": "vue-cli-service test:e2e",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "wpa:apple": "pwa-asset-generator ./public/images/icons/logo.svg ./public/images/favicons -i ./public/index.html -m ./public/manifest.json",
+    "wpa:favicon": "pwa-asset-generator ./public/images/icons/logo.svg ./public/images/favicons -i ./public/index.html -m ./public/manifest.json -c -f -s false"
   },
   "dependencies": {
     "core-js": "^2.6.5",
