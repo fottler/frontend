@@ -1,0 +1,18 @@
+@import compass/css3
+@import ../variables
+
+
+.slide-transition-wrapper
+    overflow: hidden
+.slide-enter-active, .slide-leave-active
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    +transition(opacity 1s, left 1s)
+.slide-enter, .slide-leave-to
+    opacity: 0
+.slide-enter
+    left: 200px
+.slide-leave-to
+    left: -200px

@@ -1,0 +1,62 @@
+@import ../variables
+
+
+#home-header
+    padding: 20px 10px
+
+    table
+        width: 100%
+        border-collapse: collapse
+        border: none
+
+        tr
+            td
+                padding: 0
+            .button-col,
+            .square-button
+                width: 35px
+            .navbar-button-col
+                width: 40px
+            .square-button
+                display: block
+                height: 30px
+                background: center center no-repeat
+
+                &.navbar-button
+                    background-image: url(/images/icons/menu.svg)
+                    background-size: 22px 22px
+                &.geolocation-button
+                    background-image: url(/images/icons/gps.svg)
+                    background-size: 20px 20px
+                &.filter-button
+                    background-image: url(/images/icons/settings.svg)
+                    background-size: 22px 22px
+            .search-input-col
+                text-align: center
+
+                .search-input
+                    background: url(/images/icons/search.svg) 12px center $light-grey no-repeat
+                    background-size: 12px 12px
+                    outline: none !important
+                    border: none
+                    border-radius: 6px
+                    font-size: 14px
+                    padding: 0 6px 0 36px
+                    height: 30px
+                    width: 95%
+
+                    +input-placeholder
+                        color: $grey
+
+.search-wrapper
+    padding-top: 0
+
+    input[type=text].search
+        width: 256px
+
+        +input-placeholder
+            font-size: 12px
+            font-style: italic
+            text-align: center
+
+

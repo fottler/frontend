@@ -1,0 +1,12 @@
+{
+    "status": "success",
+    "event": {
+        "id": 2,
+        "title": "first item 33",
+        "lat": 1,
+        "lng": 1,
+        "datetime": "2018-06-02 20:00",
+        "address": "ул.Советская, 18",
+        "is_applied": true
+    }
+}

@@ -1,0 +1,10 @@
+export const addToCache = 'addToCache';
+export const resetNewEvent = 'resetNewEvent';
+export const openChat = 'openChat';
+export const closeChat = 'closeChat';
+export const openMembers = 'openMembers';
+export const closeMembers = 'closeMembers';
+export const openMap = 'openMap';
+export const closeMap = 'closeMap';
+export const acceptRequest = 'acceptRequest';
+export const rejectRequest = 'rejectRequest';

@@ -1,0 +1,117 @@
+@import ../variables
+
+
+.modal-wrapper
+    position: fixed
+    z-index: 10
+    overflow-y: auto
+    top: 0
+    left: -100%
+    width: 100%
+    height: 100%
+    +transition(left 0s linear $modal-open-delay, background $modal-open-delay linear)
+
+    >.modal-inner
+        position: relative
+        max-width: 95%
+        left: 50%
+        +translate(-50%, 0)
+        background: $white
+        //border: 1px solid $light-grey1
+        border-radius: 5px
+        +box-shadow(0 1px 3px 1px rgba(0, 0, 0, 0.07))
+        top: -200px
+        opacity: 0
+        +animation(close-modal $modal-open-delay linear)
+
+        >.header
+            position: relative
+            height: 40px
+
+            .headline
+                font-weight: 900
+                font-size: 20px
+                text-align: center
+                margin: 0 40px
+                padding-top: 5px
+            .close-button
+                background: url(/images/icons/close.svg) center center no-repeat
+                background-size: 14px 14px
+                position: absolute
+                display: block
+                text-decoration: none
+                width: 40px
+                height: 40px
+                top: 0
+                right: 0
+        @media (min-width: 420px)
+            max-width: 390px
+    &.shown
+        left: 0
+        +bg-layer
+        +transition(left 0s, background $modal-open-delay linear)
+
+        .modal-inner
+            opacity: 1
+            top: 20px
+            +animation(open-modal $modal-open-delay linear)
+    &.service-modal
+        z-index: 50
+
+        >.modal-inner
+            //background: $light-grey
+            max-width: 85%
+            +animation(close-service-modal $modal-open-delay linear)
+
+            >.content
+                text-align: center
+                font-weight: 300
+                font-size: 14px
+                color: $dark-blue
+                padding: 0 30px 20px
+            @media (min-width: 420px)
+                max-width: 360px
+        &.shown
+            >.modal-inner
+                top: 60px
+                +animation(open-service-modal $modal-open-delay linear)
+    &.wide-content-modal
+        >.modal-inner
+            >.content
+                padding-left: 15px
+                padding-right: 15px
+
+
+
++keyframes(open-modal)
+    from
+        opacity: 0
+        top: -200px
+    to
+        opacity: 1
+        top: 20px
++keyframes(close-modal)
+    from
+        opacity: 1
+        top: 20px
+    to
+        opacity: 0
+        top: -200px
+
+
++keyframes(open-service-modal)
+    from
+        opacity: 0
+        top: -200px
+    to
+        opacity: 1
+        top: 60px
++keyframes(close-service-modal)
+    from
+        opacity: 1
+        top: 60px
+    to
+        opacity: 0
+        top: -200px
+
+

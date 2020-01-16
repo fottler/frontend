@@ -1,0 +1,47 @@
+@import ../variables
+
+
+.loading-spinner-wrapper
+    position: fixed
+    z-index: 40
+    top: 0
+    left: -100%
+    width: 100%
+    height: 100%
+    +transition(left 0s linear $loader-show-delay, background $loader-show-delay linear)
+
+    .loading-spinner
+        position: relative
+        width: 40px
+        height: 40px
+        border-radius: 100%
+        background: $white
+        left: 50%
+        +translate(-50%, 0)
+        top: 75px
+
+        >div
+            position: absolute
+            width: 18px
+            height: 18px
+            border: 5px solid $yellow
+            border-top-color: transparent
+            border-radius: 50%
+            top: 20px
+            left: 20px
+            box-sizing: content-box
+            animation: loading-spinner 1s linear infinite
+    &.shown
+        left: 0
+        +bg-layer
+        +transition(left 0s, background $loader-show-delay linear)
+
+
+
+@keyframes loading-spinner
+    0%
+        +transform(translate(-50%,-50%) rotate(0deg))
+    100%
+        +transform(translate(-50%,-50%) rotate(360deg))
+
+

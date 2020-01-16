@@ -1,0 +1,51 @@
+@import ../variables
+
+
+.open-navigation-button
+    display: block
+    position: absolute
+    top: 5px
+    left: 5px
+    width: 40px
+    height: 40px
+    background: url(/images/icons/menu.svg) center center no-repeat
+    background-size: 22px 22px
+
+    & + *
+        margin-left: 40px
+
+.sidebar-wrapper.navigation
+    .header
+        border-bottom: none
+    .content
+        border-top: none
+
+        .navigation-list
+            >div
+                padding-top: 12px
+                padding-bottom: 12px
+
+                .list-row
+                    padding: 6px 15px 7px 18px
+
+                    .icon
+                        top: 9px
+                        left: 18px
+                    a
+                        color: $black
+                    &.unread
+                        &:after
+                            content: ''
+                            position: absolute
+                            top: 8px
+                            left: 24px
+                            width: 8px
+                            height: 8px
+                            border-radius: 100%
+                            background: $yellow
+
+.logout-modal
+    a.button
+        margin: 0 2px
+
+

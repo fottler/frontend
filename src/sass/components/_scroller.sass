@@ -1,0 +1,21 @@
+@import ../variables
+
+
+
+.scroller
+    width: 100%
+
+    .scrollable
+        overflow: auto
+        overflow-y: hidden
+        white-space: nowrap
+
+        .item
+            display: inline-block
+            margin-right: 7px
+            margin-bottom: 10px
+
+            &:first-child
+                margin-left: 15px
+            &:last-child
+                margin-right: 15px

@@ -1,0 +1,31 @@
+@import ../variables
+
+.list-row
+    position: relative
+    padding: 10px 15px
+
+    .icon
+        display: block
+        position: absolute
+        //top: 15px
+        //left: 14px
+        //width: 16px
+        //height: 16px
+
+        & + *
+            margin-left: 28px
+    .avatar
+        position: absolute
+        border-radius: 100%
+        top: 5px
+        left: 16px
+        width: 35px
+        height: 35px
+
+        & + *
+            margin-left: 52px
+    &.highlighted
+        background: $light-grey6
+        
+        .main-text
+            font-weight: 700

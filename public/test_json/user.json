@@ -1,0 +1,29 @@
+{
+    "status": "success",
+    "user": {
+        "id": 6,
+        "name": "John Sick",
+        "birthday": "2012-07-22",
+        "gender": "1",
+        "geolocation": false,
+        "food_preferences": ["3"],
+        "drink_preferences": ["1","3"],
+        "about": "some about info",
+        "is_subscribed": true,
+        "avatar": "830413.jpg",
+        "city": "Moscow",
+        "auth_status": "2",
+
+        "info": {
+            "friends": 20,
+            "my_events": 10,
+            "participate": 13,
+            "my_requests": 11,
+
+            "unread_messages": 12,
+            "unread_notifications": 3
+        }
+    }
+}
+
+

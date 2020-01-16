@@ -1,0 +1,145 @@
+@import ../variables
+
+.sidebar-wrapper
+    position: fixed
+    z-index: 20
+    overflow-y: auto
+    top: 0
+    left: -100%
+    width: 100%
+    height: 100%
+    +transition(left 0s linear $sidebar-open-delay, background $sidebar-open-delay linear)
+
+    >.sidebar-inner
+        position: absolute
+        top: 0
+        min-height: 100%
+        width: $sidebar-width
+        left: -$sidebar-width
+        background: $white
+        +box-shadow(0 1px 3px 1px rgba(0, 0, 0, 0.07))
+        +animation(close-sidebar $sidebar-open-delay linear)
+
+        >.header,
+        >*>*>.header
+            position: relative
+            padding: 16px 15px 12px
+            border-bottom: 1px solid $light-grey2
+
+            .close-button
+                background: url(/images/icons/close.svg) center center no-repeat
+                background-size: 14px 14px
+                position: absolute
+                display: block
+                text-decoration: none
+                width: 40px
+                height: 40px
+                top: 5px
+                right: 5px
+            & + *
+                border-top: 2px solid $light-grey
+    &.w-100
+        >.sidebar-inner
+            left: -$max-sidebar-width
+            width: 100%
+            max-width: $max-sidebar-width
+            +animation(close-wide-sidebar $sidebar-open-delay linear)
+    &.right-sidebar
+        >.sidebar-inner
+            left: auto !important
+            right: -$sidebar-width
+            +animation(close-right-sidebar $sidebar-open-delay linear)
+        &.w-100
+            >.sidebar-inner
+                right: -$max-sidebar-width
+                +animation(close-wide-right-sidebar $sidebar-open-delay linear)
+    &.h-100-sidebar
+        >.sidebar-inner
+            height: 100%
+
+            >table
+                width: 100%
+                height: 100%
+
+                .header
+                    height: 49px
+                .content
+                    padding: 0
+                    vertical-align: top
+                    border-top: none
+
+                    >*
+                        height: 100%
+                        border-top: 2px solid $light-grey
+    &.navigation
+        z-index: 30
+    &.opened
+        left: 0
+        +bg-layer
+        +transition(left 0s, background $sidebar-open-delay linear)
+
+        >.sidebar-inner
+            left: 0
+            +animation(open-sidebar $sidebar-open-delay linear)
+
+
+        &.right-sidebar
+            >.sidebar-inner
+                right: 0
+                +animation(open-right-sidebar $sidebar-open-delay linear)
+        &.w-100
+            >.sidebar-inner
+                +animation(open-wide-sidebar $sidebar-open-delay linear)
+        &.right-sidebar.w-100
+            >.sidebar-inner
+                +animation(open-wide-right-sidebar $sidebar-open-delay linear)
+
+
+
+
++keyframes(open-sidebar)
+    from
+        left: -$sidebar-width
+    to
+        left: 0
++keyframes(close-sidebar)
+    from
+        left: 0
+    to
+        left: -$sidebar-width
+
+
++keyframes(open-wide-sidebar)
+    from
+        left: -$max-sidebar-width
+    to
+        left: 0
++keyframes(close-wide-sidebar)
+    from
+        left: 0
+    to
+        left: -$max-sidebar-width
+
+
++keyframes(open-right-sidebar)
+    from
+        right: -$sidebar-width
+    to
+        right: 0
++keyframes(close-right-sidebar)
+    from
+        right: 0
+    to
+        right: -$sidebar-width
+
+
++keyframes(open-wide-right-sidebar)
+    from
+        right: -$max-sidebar-width
+    to
+        right: 0
++keyframes(close-wide-right-sidebar)
+    from
+        right: 0
+    to
+        right: -$max-sidebar-width

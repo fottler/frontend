@@ -1,0 +1,78 @@
+@import ../variables
+
+
+.profile-main
+    td
+        vertical-align: top
+
+        div
+            margin-bottom: 5px
+
+            &.city
+                font-size: 14px
+                padding-left: 20px
+                background: url(/images/icons/address.svg) left -2px center no-repeat
+                background-size: 18px 18px
+            &.edit-button-wrapper
+                padding-left: 20px
+                background: url(/images/icons/edit.svg) left 1px center no-repeat
+                background-size: 14px 14px
+            &.edit-button-wrapper,
+            &.open-button-wrapper
+                a
+                    color: $light-grey5
+                    font-size: 12px
+                    font-style: italic
+        &:first-child
+            .avatar
+                border-radius: 100%
+                width: 100px
+                height: 100px
+            @media (min-width : 400px)
+                text-align: center
+    &.condensed
+        td
+            .avatar
+                width: 80px
+                height: 80px
+            div
+                margin-bottom: 1px
+            &:last-child
+                padding-left: 10px
+
+.scroller.profile-scroller
+    .item
+        text-align: center
+        vertical-align: top
+        margin-right: 25px
+        margin-bottom: 15px
+        color: $dark-blue
+
+        >div
+            &:first-child
+                font-size: 20px
+                font-weight: 700
+                margin-bottom: -5px
+            &:last-child
+                font-size: 12px
+                line-height: 12px
+
+.profile-preferences
+    padding-bottom: 50px
+
+    >div>div
+        padding: 10px 15px 0
+
+        .tag
+            margin: 0 7px 4px 0
+
+.request-bar
+    text-align: center
+    padding: 10px 15px 15px
+    background: $light-grey
+    font-size: 14px
+    +box-shadow(0 1px 3px 1px rgba(0, 0, 0, 0.25))
+
+    .text
+        margin-bottom: 10px
+

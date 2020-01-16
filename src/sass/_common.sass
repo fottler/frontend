@@ -1,0 +1,169 @@
+@import variables
+
+@mixin bg-layer
+    background: rgba(0,0,0,0.1)
+
+html
+    font-size: 100%
+body
+    position: relative
+    font-size: 100%
+    font-family: $gilroy
+    font-weight: 300
+    color: $black
+    text-align: left
+    background: $light-grey
+a
+    text-decoration: none
+
+    &.button
+        text-align: center
+        display: inline-block
+        height: 35px
+        width: 100px
+        padding: 6px 27px 0
+        border: 1px solid $dark-blue
+        border-radius: 18px
+        color: $black
+        font-size: 14px
+
+        &.yellow-button
+            border: none
+            background-color: $yellow
+        &.wide
+            width: 220px
+        &.wide1
+            width: 160px
+        &.small-padding
+            padding: 6px 15px 0
+        &.fixed-add-button
+            position: fixed
+            bottom: 28px
+            left: 50%
+            +translateX(-50%)
+            width: 160px
+            padding: 6px 0 0 14px
+            background: url(/images/icons/plus.svg) 10px center no-repeat $yellow
+            background-size: 12px 12px
+            z-index: 1
+
+            &:hover, &:focus
+                color: $black
+    &.underlined
+        text-decoration: underline
+    &:hover, &:focus
+        text-decoration: none
+
+h1
+    font-size: 20px
+    color: $dark-blue
+    margin-bottom: 5px
+h2
+    font-size: 18px
+    margin-bottom: 0
+
+p
+    &.description
+        font-size: 13px
+        line-height: 16px
+
+.black
+    color: $black
+
+    &:hover, &:focus
+        color: $black
+
+.left
+    text-align: left
+.center
+    text-align: center
+.right
+    text-align: right
+
+.w-auto
+    width: auto !important
+.max-100
+    max-width: 100%
+
+.mt-20
+    margin-top: 20px
+.mt-10
+    margin-top: 10px
+
+.mb-50
+    margin-bottom: 50px
+.mb-25
+    margin-bottom: 25px
+.mb-20
+    margin-bottom: 20px
+.mb-15
+    margin-bottom: 15px
+.mb-10
+    margin-bottom: 10px
+
+.mr-10
+    margin-right: 10px !important
+.mr-5
+    margin-right: 5px !important
+
+.pb-12
+    padding-bottom: 12px !important
+
+.font-18
+    font-size: 18px
+.font-16
+    font-size: 16px
+.font-14
+    font-size: 14px
+.font-12
+    font-size: 12px
+
+.padding-around
+    padding: 20px 15px
+
+.bb
+    border-bottom: 1px solid $light-grey1
+
+
+.body-inner
+    position: relative
+    background: $white
+    min-height: 100vh
+    max-width: 600px
+    width: 100%
+    margin-left: auto
+    margin-right: auto
+    +box-shadow(0 1px 6px 2px rgba(0, 0, 0, 0.15))
+
+.map-sidebar
+    .content
+        border-top: none !important
+
+        .map
+            height: 350px
+            background: $light-grey1
+    &.home-map-sidebar
+        z-index: 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

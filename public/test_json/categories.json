@@ -1,0 +1,23 @@
+{
+    "categories": [
+        {
+            "name": "first item 1",
+            "id": 1
+        },{
+            "name": "first item 2",
+            "id": 2
+        },{
+            "name": "first item 3",
+            "id": 3
+        },{
+            "name": "first item 4",
+            "id": 4
+        },{
+            "name": "first item 5",
+            "id": 5
+        },{
+            "name": "first item 6",
+            "id": 6
+        }
+    ]
+}

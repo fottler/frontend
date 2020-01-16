@@ -1,0 +1,21 @@
+{
+    "messages": [
+        {
+            "entity_type": 1,
+            "entity_id": 1,
+            "entity_name": "event name 1",
+            "entity_image": "event1.jpg",
+            "last_message_text": "some last message",
+            "last_message_datetime": "2019-12-17T12:48",
+            "unread_message_number": "3"
+        },{
+            "entity_type": 2,
+            "entity_id": 4,
+            "entity_name": "user name 2",
+            "entity_image": "user2.jpg",
+            "last_message_text": "some last message from user",
+            "last_message_datetime": "2019-12-17 12:48",
+            "unread_message_number": "14"
+        }
+    ]
+}

@@ -1,0 +1,186 @@
+@import ../variables
+
+
+
+.event-view-types
+    text-align: right
+
+    a
+        color: $black
+        font-size: 16px
+        border-bottom: 1px solid transparent
+
+        &.active
+            border-bottom-color: $black
+        &:first-child
+            margin-right: 15px
+
+.event-list
+    padding-top: 17px
+    padding-bottom: 100px
+
+.event
+    height: 160px
+    background: $white
+    border-radius: 6px
+    margin-bottom: 20px
+    +box-shadow(0px 2px 12px 2px rgba(0,0,0,0.1))
+    cursor: pointer
+
+    .image-wrapper
+        position: relative
+        height: 80px
+        overflow: hidden
+        border-radius: 6px 6px 0 0
+        background: $light-grey1
+
+        img
+            position: relative
+            width: 100%
+            top: 50%
+            +translateY(-50%)
+        .overlay
+            position: absolute
+            left: 0
+            right: 0
+            top: 0
+            bottom: 0
+            background: rgba(0,0,0,0.3)
+
+            .distance
+                position: absolute
+                top: 5px
+                right: 5px
+                font-weight: 600
+                color: $white
+                font-size: 14px
+            .like
+                display: block
+                position: absolute
+                bottom: 0
+                right: 0
+                width: 30px
+                height: 24px
+                background: url(/images/icons/heart.svg) center center no-repeat
+                background-size: 14px 14px
+
+                &.liked
+                    background-image: url(/images/icons/heart-filled.svg)
+    .content-wrapper
+        margin: 8px 9px 0 9px
+
+        .title
+            font-size: 14px
+        .date-wrapper
+            font-size: 12px
+            width: 100%
+            margin-bottom: 5px
+
+            tr
+                td
+                    &:last-child
+                        text-align: right
+        .people-wrapper
+            font-size: 12px
+            text-align: right
+
+            span
+                display: inline-block
+                padding-right: 13px
+                background: right center no-repeat
+
+                &:first-child
+                    margin-right: 10px
+                    background-image: url(/images/icons/female.svg)
+                    background-size: 10px 10px
+                &:nth-child(2)
+                    background-image: url(/images/icons/male.svg)
+                    background-size: 10px 10px
+
+.event-view
+    .image-wrapper
+        position: relative
+        height: 150px
+        overflow: hidden
+        background: $light-grey1
+
+        img
+            position: relative
+            width: 100%
+            top: 50%
+            +translateY(-50%)
+        .like
+            display: block
+            position: absolute
+            top: 0
+            right: 0
+            width: 44px
+            height: 48px
+            background: url(/images/icons/heart.svg) center center no-repeat
+            background-size: 18px 18px
+
+            &.liked
+                background-image: url(/images/icons/heart-filled.svg)
+        .about
+            color: $white
+            background: rgba(0,0,0,0.65)
+            font-size: 14px
+            font-weight: 300
+            padding: 10px 20px
+            line-height: 16px
+            position: absolute
+            bottom: 0
+            right: 0
+            left: 0
+    .content-wrapper
+        padding: 22px 17px
+
+        .date-wrapper
+            margin-bottom: 3px
+            padding-left: 20px
+            background: url(/images/icons/date.svg) left center no-repeat
+            background-size: 16px 16px
+        .address-wrapper
+            margin-bottom: 8px
+            padding-left: 20px
+            background: url(/images/icons/address.svg) -1px center no-repeat
+            background-size: 19px 19px
+
+            a
+                color: $black
+                text-decoration: underline
+
+                &:hover, &:focus
+                    text-decoration: none
+        .people-wrapper
+            margin-bottom: 10px
+
+            span
+                display: inline-block
+                padding-right: 16px
+                background: right center no-repeat
+
+                &:first-child
+                    margin-right: 10px
+                    background-image: url(/images/icons/female.svg)
+                    background-size: 13px 13px
+                &:nth-child(2)
+                    background-image: url(/images/icons/male.svg)
+                    background-size: 13px 13px
+            a
+                margin-left: 15px
+                font-size: 14px
+                color: $black
+                text-decoration: underline
+
+                &.disabled
+                    color: $light-grey7
+                    cursor: auto
+        .preferences-wrapper
+            font-style: italic
+            font-size: 13px
+            margin-bottom: 20px
+        .button-wrapper
+            text-align: center
+            margin-bottom: 5px
+

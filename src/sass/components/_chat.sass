@@ -1,0 +1,94 @@
+@import ../variables
+
+
+.chat
+    height: 100%
+    width: 100%
+
+    .chat-messages-list
+        >td
+            padding: 0
+
+            >div
+                height: 100%
+                overflow-y: auto
+
+                .chat-messages-list-inner
+                    min-height: 100%
+
+                    .chat-messages-list-inner-inner
+                        vertical-align: bottom
+                        padding-top: 10px
+
+                        .message
+                            max-width: 100%
+                            margin-bottom: 10px
+
+                            tr
+                                vertical-align: bottom
+
+                                .text-wrapper
+                                    .text
+                                        font-size: 14px
+                                        border-radius: 10px
+                                        padding: 8px 12px
+                                        line-height: 17px
+                                        word-wrap: break-word
+                                        overflow-wrap: break-word
+                                        word-break: break-word
+                                .time-wrapper
+                                    font-size: 10px
+                            &.their
+                                .avatar-wrapper
+                                    padding-left: 15px
+                                    padding-right: 10px
+
+                                    .avatar
+                                        border-radius: 100%
+                                        width: 50px
+                                        height: 50px
+                                .text-wrapper
+                                    .text
+                                        background: $light-grey1
+                                        border-radius: 10px 10px 10px 0
+                                .time-wrapper
+                                    text-align: left
+                                    padding-left: 4px
+                                    padding-right: 17px
+                            &.mine
+                                margin-left: auto
+
+                                .time-wrapper
+                                    text-align: right
+                                    padding-left: 15px
+                                    padding-right: 5px
+                                    width: 105px
+                                .text-wrapper
+                                    padding-right: 15px
+
+                                    .text
+                                        background: $yellow
+                                        border-radius: 10px 10px 0 10px
+    .send-message-wrapper
+        >td
+            height: 50px
+
+            &:first-child
+                position: relative
+                padding: 10px 5px 10px 15px
+
+                input[type=text]
+                    width: 100%
+                    padding: 5px 10px
+
+                    +input-placeholder
+                        text-align: left
+            &:last-child
+                width: 47px
+
+                .send-button
+                    display: block
+                    width: 40px
+                    height: 40px
+                    background: url(/images/icons/send.svg) center center no-repeat
+                    background-size: 20px 20px
