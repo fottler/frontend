@@ -1,4 +1,4 @@
-import FormHelper from "@/store/FormHelper";
+import VuexFormHelper from "@/core/form/VuexFormHelper";
 import {submit} from "@/store/types";
 import {
     addLocal, addNew,
@@ -21,7 +21,7 @@ function actions(api){
                 oldestMessageId = getters.oldestMessageId,
                 result = await api.getOlder(state.currentId, oldestMessageId);
 
-            if(FormHelper.isSuccess(result.status)){
+            if(VuexFormHelper.isSuccess(result.status)){
                 commit(addOld, result.messages);
             }
             commit(oldIsNotLoading);
@@ -58,7 +58,7 @@ function actions(api){
                 return;
             }
 
-            if(FormHelper.isSuccess(result.status)){
+            if(VuexFormHelper.isSuccess(result.status)){
                 commit(removeAllLocal);
                 commit(addNew, result.messages);
             }

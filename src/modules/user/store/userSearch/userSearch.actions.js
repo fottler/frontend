@@ -1,12 +1,12 @@
 import {loadAll, applyFilter, setAll, resetFilter} from "@/store/types";
 import User from "@/modules/user/models/User";
-import FormHelper from "@/store/FormHelper";
+import VuexFormHelper from "@/core/form/VuexFormHelper";
 
 const actions = {
     async [ loadAll ]({ dispatch, state }){
         const result = await User.getAll({...state.filter});
 
-        if(FormHelper.isSuccess(result.status)){
+        if(VuexFormHelper.isSuccess(result.status)){
             dispatch(setAll, result.users);
             return true;
         }

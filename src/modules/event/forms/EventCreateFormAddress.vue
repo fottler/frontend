@@ -32,7 +32,7 @@
     import Map from "@/core/map/google/Map";
     import Config from "@/config/Config";
     import LocationInfo from "@/core/map/google/services/LocationInfo";
-    import FormHelper from "@/store/FormHelper";
+    import VuexFormHelper from "@/core/form/VuexFormHelper";
     import Geolocation from "@/core/map/Geolocation";
     import SearchBox from "@/core/map/google/SearchBox";
     import Marker from "@/core/map/google/marker/Marker";
@@ -109,7 +109,7 @@
             async updateCoordinates(lat, lng, placeId){
                 const result = await this.locationInfo.run({lat, lng, placeId});
 
-                if(FormHelper.isSuccess(result.status)){
+                if(VuexFormHelper.isSuccess(result.status)){
                     const {placeName, address, lat, lng} = result;
 
                     this.updateAddress(lat, lng, placeName, address);
@@ -130,7 +130,7 @@
             async runGeolocation(){
                 const {status, lat, lng} = await this.geolocation.run();
 
-                if(FormHelper.isSuccess(status)){
+                if(VuexFormHelper.isSuccess(status)){
                     this.map.setCenter(lat, lng);
                 }
             },

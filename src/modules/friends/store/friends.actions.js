@@ -1,5 +1,5 @@
 import {setAll, loadAll, add, set, addAll} from "@/store/types";
-import FormHelper from "@/store/FormHelper";
+import VuexFormHelper from "@/core/form/VuexFormHelper";
 import User from "@/modules/user/models/User";
 import {
     acceptRequest,
@@ -15,7 +15,7 @@ const actions = {
             status: User.friendStatuses.friend
         });
 
-        if(FormHelper.isSuccess(result.status)){
+        if(VuexFormHelper.isSuccess(result.status)){
             dispatch(setAll, result.users);
             commit(setRequestAmount, result.request_amount);
             return true;
@@ -30,7 +30,7 @@ const actions = {
             status: User.friendStatuses.requestToMe
         });
 
-        if(FormHelper.isSuccess(result.status)){
+        if(VuexFormHelper.isSuccess(result.status)){
             dispatch(setAllRequests, result.users);
             commit(setRequestAmount, result.users.length);
             return true;
@@ -43,7 +43,7 @@ const actions = {
     async [ sendRequest ]({ dispatch }, user){
         const result = await User.changeFriendStatus(user.id, User.friendStatuses.requestFromMe);
 
-        if(FormHelper.isSuccess(result.status)){
+        if(VuexFormHelper.isSuccess(result.status)){
             dispatch('users/'+set, result.user, {root:true});
             return true;
         }
@@ -55,7 +55,7 @@ const actions = {
     async [ acceptRequest ]({ dispatch, commit }, user){
         const result = await User.changeFriendStatus(user.id, User.friendStatuses.friend);
 
-        if(FormHelper.isSuccess(result.status)){
+        if(VuexFormHelper.isSuccess(result.status)){
             dispatch(add, result.user);
             commit(removeRequest, result.user);
             return true;
@@ -68,7 +68,7 @@ const actions = {
     async [ rejectRequest ]({ dispatch, commit }, user){
         const result = await User.changeFriendStatus(user.id, User.friendStatuses.none);
 
-        if(FormHelper.isSuccess(result.status)){
+        if(VuexFormHelper.isSuccess(result.status)){
             dispatch('users/'+set, result.user, {root:true});
             commit(removeRequest, result.user);
             return true;

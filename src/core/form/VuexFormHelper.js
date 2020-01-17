@@ -1,8 +1,8 @@
 import {clearErrors, setErrors} from "@/store/types";
-import ClientValidation from "@/core/ClientValidation";
+import ClientValidation from "@/core/form/ClientValidation";
 import Constants from "@/core/Constants";
 
-export default class FormHelper {
+export default class VuexFormHelper {
 
     static validateOnClient(commit, model, rules){
         commit(clearErrors);
@@ -40,4 +40,4 @@ export default class FormHelper {
     }
 
 }
-const self = FormHelper;
+const self = VuexFormHelper;

@@ -1,4 +1,4 @@
-import FormHelper from "@/store/FormHelper";
+import VuexFormHelper from "@/core/form/VuexFormHelper";
 import User from "@/modules/user/models/User";
 import {initAuth, login, logout, submitLogin1, submitLogin2} from "@/modules/user/store/auth/auth.types";
 import {resetFields, setErrors} from "@/store/types";
@@ -24,13 +24,13 @@ const actions = {
     },
 
     async [ submitLogin1 ]({ dispatch, commit, state }){
-        if(FormHelper.validateOnClient(commit, {phone: state.phone}, User.validationRules.login1)){
+        if(VuexFormHelper.validateOnClient(commit, {phone: state.phone}, User.validationRules.login1)){
             const result = await User.login1(state.phone);
 
-            if(FormHelper.isHttpError(result.status)){
+            if(VuexFormHelper.isHttpError(result.status)){
                 //todo global handler should be used for this
             }
-            else if(FormHelper.isError(result.status)){
+            else if(VuexFormHelper.isError(result.status)){
                 if(result.errors === 'Verification code has already been sent'){
                     commit(setErrors, {
                         code: 'Sms с кодом уже было отправлено'
@@ -41,7 +41,7 @@ const actions = {
                     commit(setErrors, result.errors);
                 }
             }
-            else if(FormHelper.isSuccess(result.status)){
+            else if(VuexFormHelper.isSuccess(result.status)){
                 //todo remove
                 dispatch('login2', result.code);
 
@@ -55,10 +55,10 @@ const actions = {
             code: state.code
         };
 
-        if(FormHelper.validateOnClient(commit, userData, User.validationRules.login2)){
+        if(VuexFormHelper.validateOnClient(commit, userData, User.validationRules.login2)){
             const result = await User.login2(userData);
 
-            if(FormHelper.isHttpError(result.status)){
+            if(VuexFormHelper.isHttpError(result.status)){
                 //todo global handler should be used for this
                 return false;
             }

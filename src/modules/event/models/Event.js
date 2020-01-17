@@ -2,7 +2,7 @@ import ServerRequest from '@/core/ServerRequest'
 import * as yup from "yup";
 import Model from "@/core/Model";
 import ApiConfig from "@/config/ApiConfig";
-import FormHelper from "@/store/FormHelper";
+import VuexFormHelper from "@/core/form/VuexFormHelper";
 import {set, setAll} from "@/store/types";
 import ListConfig from "@/config/ListConfig";
 import ArrayUtil from "@/core/utilities/ArrayUtil";
@@ -106,7 +106,7 @@ export default class Event extends Model {
     static async ajaxActionSet({ dispatch }, serverMethod){
         const result = await serverMethod();
 
-        if(FormHelper.isSuccess(result.status)){
+        if(VuexFormHelper.isSuccess(result.status)){
             dispatch(set, result.event);
             return true;
         }
@@ -118,7 +118,7 @@ export default class Event extends Model {
     static async ajaxActionSetAll({ dispatch }, serverMethod){
         const result = await serverMethod();
 
-        if(FormHelper.isSuccess(result.status)){
+        if(VuexFormHelper.isSuccess(result.status)){
             dispatch(setAll, result.events);
             return true;
         }

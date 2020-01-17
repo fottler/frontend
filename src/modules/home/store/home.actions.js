@@ -10,7 +10,7 @@ import {
 } from "@/store/types";
 import Event from "@/modules/event/models/Event";
 import Geolocation from "@/core/map/Geolocation";
-import FormHelper from "@/store/FormHelper";
+import VuexFormHelper from "@/core/form/VuexFormHelper";
 import Config from "@/config/Config";
 
 const actions = {
@@ -46,7 +46,7 @@ const actions = {
             ),
             result = await geolocation.run();
 
-        if(FormHelper.isSuccess(result.status)){
+        if(VuexFormHelper.isSuccess(result.status)){
             await dispatch(setCoordinates, result);
         }
     },

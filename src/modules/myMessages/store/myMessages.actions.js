@@ -2,7 +2,7 @@ import {
     loadAll,
     resetFilter, setAll, chooseFilterType
 } from "@/store/types";
-import FormHelper from "@/store/FormHelper";
+import VuexFormHelper from "@/core/form/VuexFormHelper";
 import MyMessages from "@/modules/myMessages/models/MyMessages";
 import {readAllMessages} from "@/modules/user/store/user/user.types";
 
@@ -10,7 +10,7 @@ const actions = {
     async [ loadAll ]({ dispatch, commit, state }){
         const result = await MyMessages.getAll(state.filter);
 
-        if(FormHelper.isSuccess(result.status)){
+        if(VuexFormHelper.isSuccess(result.status)){
             commit(setAll, result.messages);
             dispatch('user/'+readAllMessages, null, {root:true});
             return true;

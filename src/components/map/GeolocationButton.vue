@@ -13,7 +13,7 @@
 
 <script>
     import Config from "@/config/Config";
-    import FormHelper from "@/store/FormHelper";
+    import VuexFormHelper from "@/core/form/VuexFormHelper";
     import modalHandler from "@/mixins/modalHandler";
     import Modal from "@/components/common/Modal";
     import Geolocation from "@/core/map/Geolocation";
@@ -35,7 +35,7 @@
             async run(){
                 const result = await this.geolocation.run();
 
-                if(FormHelper.isSuccess(result.status)){
+                if(VuexFormHelper.isSuccess(result.status)){
                     this.$emit('success', result);
                 }
                 else{

@@ -1,12 +1,12 @@
 import {setAll, loadAll, add, set, addAll} from "@/store/types";
 import User from "@/modules/user/models/User";
-import FormHelper from "@/store/FormHelper";
+import VuexFormHelper from "@/core/form/VuexFormHelper";
 
 const actions = {
     async [ loadAll ]({ dispatch }, eventId){
         const result = await User.getByEvent(eventId);
 
-        if(FormHelper.isSuccess(result.status)){
+        if(VuexFormHelper.isSuccess(result.status)){
             dispatch(setAll, {
                 eventId,
                 users: result.users

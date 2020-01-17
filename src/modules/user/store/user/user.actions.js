@@ -1,5 +1,5 @@
 import {runGeolocation, setError, submit, updatePicture} from "@/store/types";
-import FormHelper from "@/store/FormHelper";
+import VuexFormHelper from "@/core/form/VuexFormHelper";
 import User from "@/modules/user/models/User";
 import {loadUserInfo, resetUser, setUser, readAllMessages, readAllNotifications} from "@/modules/user/store/user/user.types";
 import Config from "@/config/Config";
@@ -9,7 +9,7 @@ const actions = {
     async [ loadUserInfo ]({ commit }){
         const result = await User.getInfo();
 
-        if(FormHelper.isSuccess(result.status)){
+        if(VuexFormHelper.isSuccess(result.status)){
             result.user = User.formatAfterLoad(result.user);
             commit(setUser, result.user);
             return true;
@@ -26,8 +26,8 @@ const actions = {
         commit(resetUser);
     },
     async [ submit ]({ commit, state }){
-        if(FormHelper.validateOnClient(commit, state.editableUser, User.validationRules.edit)){
-            const result = await FormHelper.save(commit, state.editableUser, User.edit);
+        if(VuexFormHelper.validateOnClient(commit, state.editableUser, User.validationRules.edit)){
+            const result = await VuexFormHelper.save(commit, state.editableUser, User.edit);
 
             if(result){
                 commit(setUser, result.user);
@@ -57,7 +57,7 @@ const actions = {
 
         geoInfo.destroy();
 
-        if(FormHelper.isSuccess(result.status)){
+        if(VuexFormHelper.isSuccess(result.status)){
             commit('updateEditableUserField', {
                 path: 'city',
                 value: result.city

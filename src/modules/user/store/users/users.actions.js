@@ -7,14 +7,14 @@ import {
     rejectEventRequest
 } from "@/modules/user/store/users/users.types";
 import User from "@/modules/user/models/User";
-import FormHelper from "@/store/FormHelper";
+import VuexFormHelper from "@/core/form/VuexFormHelper";
 import {acceptRequest, rejectRequest} from "@/modules/event/store/event/event.types";
 
 const actions = {
     async [ load ]({ dispatch }, id){
         const result = await User.getOne(id);
 
-        if(FormHelper.isSuccess(result.status)){
+        if(VuexFormHelper.isSuccess(result.status)){
             dispatch(set, result.user);
             return result.user;
         }

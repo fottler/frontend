@@ -1,5 +1,5 @@
 import LocationInfo from "@/core/map/google/services/LocationInfo";
-import FormHelper from "@/store/FormHelper";
+import VuexFormHelper from "@/core/form/VuexFormHelper";
 import Geolocation from "@/core/map/Geolocation";
 
 export default class GeoInfo {
@@ -10,7 +10,7 @@ export default class GeoInfo {
     async run(){
         const result = await this.geolocation.run();
 
-        if(FormHelper.isSuccess(result.status)){
+        if(VuexFormHelper.isSuccess(result.status)){
             return await this.locationInfo.run(result);
         }
         return result;

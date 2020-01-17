@@ -11,13 +11,13 @@ import {
 import SSList from "@/core/SSList";
 import {acceptRequest, addToCache, rejectRequest, resetNewEvent} from "@/modules/event/store/event/event.types";
 import Event from "@/modules/event/models/Event";
-import FormHelper from "@/store/FormHelper";
+import VuexFormHelper from "@/core/form/VuexFormHelper";
 
 const actions = {
     async [ load ]({ dispatch }, id){
         const result = await Event.getOne(id);
 
-        if(FormHelper.isSuccess(result.status)){
+        if(VuexFormHelper.isSuccess(result.status)){
             dispatch(set, result.event);
             return result.event;
         }
@@ -44,7 +44,7 @@ const actions = {
     async [ acceptRequest ](context, {eventId, userId}){
         const result = await Event.acceptRequest(eventId, userId);
 
-        if(FormHelper.isSuccess(result.status)){
+        if(VuexFormHelper.isSuccess(result.status)){
             return true;
         }
         else{
@@ -55,7 +55,7 @@ const actions = {
     async [ rejectRequest ](context, {eventId, userId}){
         const result = await Event.rejectRequest(eventId, userId);
 
-        if(FormHelper.isSuccess(result.status)){
+        if(VuexFormHelper.isSuccess(result.status)){
             return true;
         }
         else{
@@ -66,8 +66,8 @@ const actions = {
     async [ submit ]({ dispatch, commit, state }){
         const newEvent = Event.formatBeforeSave(state.newEvent);
 
-        if(FormHelper.validateOnClient(commit, state.newEvent, Event.validationRules.add)){
-            const result = await FormHelper.save(commit, newEvent, Event.add);
+        if(VuexFormHelper.validateOnClient(commit, state.newEvent, Event.validationRules.add)){
+            const result = await VuexFormHelper.save(commit, newEvent, Event.add);
 
             if(result){
                 dispatch(set, result.event);
