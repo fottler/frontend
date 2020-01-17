@@ -1,18 +1,11 @@
-import {reset, setAll, add, clearErrors, setErrors} from "@/store/types";
+import {add, clearErrors, setErrors, set} from "@/store/types";
 import {updateField} from "vuex-map-fields";
 import EventCategory from "@/modules/eventCategory/models/EventCategory";
 import {resetNewCategory} from "@/modules/eventCategory/store/eventCategory.types";
+import {addToCache} from "@/modules/eventCategory/store/eventCategory.types";
+import Vue from "vue";
 
 const mutations = {
-    [ setAll ](state, categories){
-        state.categories = categories;
-    },
-    [ reset ](state){
-        state.categories = [];
-    },
-    [ add ](state, category){
-        state.categories.push(category);
-    },
     [ clearErrors ](state){
         state.errors = {};
     },
@@ -24,6 +17,15 @@ const mutations = {
     },
 
 
+    [ add ](state, {category}){
+        state.categories.push(category);
+    },
+    [ set ](state, {index, category}){
+        Vue.set(state.categories, index, category);
+    },
+    [ addToCache ](state, {key, value}){
+        Vue.set(state.cache, key, value);
+    },
     updateNewCategoryField(state, field) {
         updateField(state.newCategory, field);
     }

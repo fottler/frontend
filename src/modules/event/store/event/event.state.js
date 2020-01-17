@@ -6,6 +6,6 @@ const state = {
     cache: {},
 
     errors: {},
-    newEvent: EventTest.reset(), //todo Event.reset(),
+    newEvent: Event.reset(), //todo EventTest.reset(),
 };
 export default state;
