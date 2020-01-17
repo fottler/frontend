@@ -22,17 +22,20 @@
             </div>
 
             <div class="carousel-wrapper">
-                <profile-statistics :items="user.info"
+                <profile-statistics v-if="user.info"
+                                    :items="user.info"
                                     class="profile-scroller"></profile-statistics>
             </div>
         </div>
 
         <div class="profile-preferences">
-            <profile-preferences headline="Предпочтения в еде:"
+            <profile-preferences v-if="user.food_preferences"
+                                 headline="Предпочтения в еде:"
                                  item-class="grey-tag"
                                  :items="food(user.id)"></profile-preferences>
 
-            <profile-preferences headline="Предпочтения в напитках:"
+            <profile-preferences v-if="user.drink_preferences"
+                                 headline="Предпочтения в напитках:"
                                  item-class="bordered-tag"
                                  :items="drinks(user.id)"></profile-preferences>
         </div>

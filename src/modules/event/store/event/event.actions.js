@@ -18,6 +18,7 @@ const actions = {
         const result = await Event.getOne(id);
 
         if(VuexFormHelper.isSuccess(result.status)){
+            result.event = Event.formatAfterLoad(result.event);
             dispatch(set, result.event);
             return result.event;
         }
@@ -70,6 +71,7 @@ const actions = {
             const result = await VuexFormHelper.save(commit, newEvent, Event.add);
 
             if(result){
+                result.event = Event.formatAfterLoad(result.event);
                 dispatch(set, result.event);
                 commit(resetNewEvent);
                 return true;

@@ -15,6 +15,7 @@ const actions = {
         const result = await User.getOne(id);
 
         if(VuexFormHelper.isSuccess(result.status)){
+            result.user = User.formatAfterLoad(result.user);
             dispatch(set, result.user);
             return result.user;
         }

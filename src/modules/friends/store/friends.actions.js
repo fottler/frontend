@@ -16,6 +16,7 @@ const actions = {
         });
 
         if(VuexFormHelper.isSuccess(result.status)){
+            result.users = User.formatAllAfterLoad(result.users);
             dispatch(setAll, result.users);
             commit(setRequestAmount, result.request_amount);
             return true;
@@ -31,6 +32,7 @@ const actions = {
         });
 
         if(VuexFormHelper.isSuccess(result.status)){
+            result.users = User.formatAllAfterLoad(result.users);
             dispatch(setAllRequests, result.users);
             commit(setRequestAmount, result.users.length);
             return true;
@@ -44,6 +46,7 @@ const actions = {
         const result = await User.changeFriendStatus(user.id, User.friendStatuses.requestFromMe);
 
         if(VuexFormHelper.isSuccess(result.status)){
+            result.user = User.formatAfterLoad(result.user);
             dispatch('users/'+set, result.user, {root:true});
             return true;
         }
@@ -56,6 +59,7 @@ const actions = {
         const result = await User.changeFriendStatus(user.id, User.friendStatuses.friend);
 
         if(VuexFormHelper.isSuccess(result.status)){
+            result.user = User.formatAfterLoad(result.user);
             dispatch(add, result.user);
             commit(removeRequest, result.user);
             return true;
@@ -69,6 +73,7 @@ const actions = {
         const result = await User.changeFriendStatus(user.id, User.friendStatuses.none);
 
         if(VuexFormHelper.isSuccess(result.status)){
+            result.user = User.formatAfterLoad(result.user);
             dispatch('users/'+set, result.user, {root:true});
             commit(removeRequest, result.user);
             return true;

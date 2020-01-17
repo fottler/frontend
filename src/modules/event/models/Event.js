@@ -107,6 +107,7 @@ export default class Event extends Model {
         const result = await serverMethod();
 
         if(VuexFormHelper.isSuccess(result.status)){
+            result.event = Event.formatAfterLoad(result.event);
             dispatch(set, result.event);
             return true;
         }
@@ -119,6 +120,7 @@ export default class Event extends Model {
         const result = await serverMethod();
 
         if(VuexFormHelper.isSuccess(result.status)){
+            result.events = Event.formatAllAfterLoad(result.events);
             dispatch(setAll, result.events);
             return true;
         }
@@ -128,13 +130,16 @@ export default class Event extends Model {
         }
     }
 
-    static pictureUrl(pictureName, subFolder = ''){
+    static pictureFolderUrl(){
+        return ApiConfig.baseUrl + ApiConfig.urls.event.pictureFolderUrl;
+    }
+    static pictureUrl(pictureName, subFolder = 'origin'){
         const subFolderPath = '/'+ (subFolder ? subFolder +'/' : '');
 
-        return ApiConfig.urls.event.pictureFolderUrl + subFolderPath + pictureName;
+        return Event.pictureFolderUrl() + subFolderPath + pictureName;
     }
     static bigPictureUrl(pictureName){
-        return Event.pictureUrl(pictureName, 'big');
+        return Event.pictureUrl(pictureName, 'medium');
     }
     static smallPictureUrl(pictureName){
         return Event.pictureUrl(pictureName, 'small');
@@ -158,5 +163,20 @@ export default class Event extends Model {
             ...event,
             datetime: event.datetime.replace('T', ' ')
         };
+    }
+    static formatAfterLoad(event){
+        if(event.food_preferences){
+            event.food_preferences = Event.preferencesToIdsArray(event.food_preferences);
+        }
+        if(event.drink_preferences){
+            event.drink_preferences = Event.preferencesToIdsArray(event.drink_preferences);
+        }
+        return event;
+    }
+    static formatAllAfterLoad(events){
+        return events.map(event => Event.formatAfterLoad(event));
+    }
+    static preferencesToIdsArray(preferences){
+        return preferences.map(item => ''+item.id);
     }
 }

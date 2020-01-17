@@ -1058,7 +1058,7 @@ p.description {
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
-/* line 5, ../sass/components/_form.sass */
+/* line 6, ../sass/components/_form.sass */
 .list-row input[type=text],
 .list-row input[type=number],
 .list-row input[type=date],
@@ -1094,7 +1094,7 @@ p.description {
 .list-row input[type=datetime-local]::-webkit-input-placeholder {
   color: #c3c3c3;
 }
-/* line 14, ../sass/components/_form.sass */
+/* line 15, ../sass/components/_form.sass */
 .list-row input[type=text].underlined,
 .list-row input[type=number].underlined,
 .list-row input[type=date].underlined,
@@ -1102,28 +1102,28 @@ p.description {
   border-radius: 0;
   border-bottom: 1px solid #c3c3c3;
 }
-/* line 17, ../sass/components/_form.sass */
+/* line 18, ../sass/components/_form.sass */
 .list-row input[type=text].w-100,
 .list-row input[type=number].w-100,
 .list-row input[type=date].w-100,
 .list-row input[type=datetime-local].w-100 {
   margin-left: 0 !important;
 }
-/* line 20, ../sass/components/_form.sass */
+/* line 21, ../sass/components/_form.sass */
 .list-row input[type=text].w-100.pl,
 .list-row input[type=number].w-100.pl,
 .list-row input[type=date].w-100.pl,
 .list-row input[type=datetime-local].w-100.pl {
   padding-left: 28px;
 }
-/* line 22, ../sass/components/_form.sass */
+/* line 23, ../sass/components/_form.sass */
 .list-row input[type=text].w-100.pl-50,
 .list-row input[type=number].w-100.pl-50,
 .list-row input[type=date].w-100.pl-50,
 .list-row input[type=datetime-local].w-100.pl-50 {
   padding-left: 50px;
 }
-/* line 24, ../sass/components/_form.sass */
+/* line 25, ../sass/components/_form.sass */
 .list-row textarea {
   padding: 15px 15px;
   display: block;
@@ -1147,11 +1147,11 @@ p.description {
 .list-row textarea::-webkit-input-placeholder {
   color: #c3c3c3;
 }
-/* line 33, ../sass/components/_form.sass */
+/* line 34, ../sass/components/_form.sass */
 .list-row label {
   margin-bottom: 0;
 }
-/* line 36, ../sass/components/_form.sass */
+/* line 37, ../sass/components/_form.sass */
 .list-row label .tip {
   font-size: 14px;
   color: #8e8e8e;
@@ -1159,60 +1159,60 @@ p.description {
   text-align: center;
   margin-top: -3px;
 }
-/* line 43, ../sass/components/_form.sass */
+/* line 44, ../sass/components/_form.sass */
 .list-row label .tip.left-tip {
   text-align: left;
   color: #a09e9e;
 }
-/* line 46, ../sass/components/_form.sass */
+/* line 47, ../sass/components/_form.sass */
 .list-row label.left-label {
   position: absolute;
   left: 15px;
   top: 11px;
 }
-/* line 50, ../sass/components/_form.sass */
+/* line 51, ../sass/components/_form.sass */
 .list-row .switcher {
   margin-top: 2px;
 }
-/* line 52, ../sass/components/_form.sass */
+/* line 53, ../sass/components/_form.sass */
 .list-row.button-wrapper {
   text-align: center;
   padding-top: 20px;
 }
-/* line 56, ../sass/components/_form.sass */
+/* line 57, ../sass/components/_form.sass */
 .list-row.right input[type=text],
 .list-row.right input[type=number],
 .list-row.right input[type=date],
 .list-row.right input[type=datetime-local] {
   text-align: right;
 }
-/* line 61, ../sass/components/_form.sass */
+/* line 62, ../sass/components/_form.sass */
 .list-row.right > div,
 .list-row.right .switcher-wrapper {
   margin-left: auto;
 }
-/* line 64, ../sass/components/_form.sass */
+/* line 65, ../sass/components/_form.sass */
 .list-row.without-padding {
   padding: 0;
 }
-/* line 66, ../sass/components/_form.sass */
+/* line 67, ../sass/components/_form.sass */
 .list-row .icon ~ .error {
   padding-left: 28px;
 }
 
-/* line 69, ../sass/components/_form.sass */
+/* line 70, ../sass/components/_form.sass */
 .open-sidebar {
   position: relative;
   padding-right: 25px;
   cursor: pointer;
 }
-/* line 74, ../sass/components/_form.sass */
+/* line 75, ../sass/components/_form.sass */
 .open-sidebar .value {
   margin-top: -3px;
   font-size: 12px;
   color: #bcbcbc;
 }
-/* line 78, ../sass/components/_form.sass */
+/* line 79, ../sass/components/_form.sass */
 .open-sidebar .arrow {
   position: absolute;
   top: 5px;
@@ -1221,7 +1221,7 @@ p.description {
   height: 18px;
 }
 
-/* line 85, ../sass/components/_form.sass */
+/* line 86, ../sass/components/_form.sass */
 textarea.default {
   width: 100%;
   border: 1px solid #c3c3c3;
@@ -1251,7 +1251,7 @@ textarea.default::-webkit-input-placeholder {
   font-style: italic;
 }
 
-/* line 97, ../sass/components/_form.sass */
+/* line 98, ../sass/components/_form.sass */
 input[type=text].grey-input {
   border: none;
   background: #f0f0f0;
@@ -1282,13 +1282,13 @@ input[type=text].grey-input::-webkit-input-placeholder {
   text-align: center;
 }
 
-/* line 110, ../sass/components/_form.sass */
+/* line 111, ../sass/components/_form.sass */
 .file-uploads {
   display: block !important;
   margin: 10px auto 0;
   width: 80px;
 }
-/* line 115, ../sass/components/_form.sass */
+/* line 116, ../sass/components/_form.sass */
 .file-uploads .upload-image {
   height: 80px;
   border-radius: 5px;
@@ -1296,48 +1296,55 @@ input[type=text].grey-input::-webkit-input-placeholder {
   background-size: 25px 25px;
   overflow: hidden;
 }
-/* line 122, ../sass/components/_form.sass */
+/* line 123, ../sass/components/_form.sass */
 .file-uploads .upload-image img {
-  width: 100%;
+  position: relative;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
-/* line 124, ../sass/components/_form.sass */
+/* line 129, ../sass/components/_form.sass */
 .file-uploads label {
   cursor: pointer;
 }
-/* line 127, ../sass/components/_form.sass */
+/* line 132, ../sass/components/_form.sass */
 .file-uploads.upload-avatar .upload-image {
   background-image: url(/images/icons/avatar.svg);
   border-radius: 100%;
   background-size: 64px 64px;
 }
 
-/* line 132, ../sass/components/_form.sass */
+/* line 137, ../sass/components/_form.sass */
 .error {
   color: #f20f0f;
   font-size: 12px;
   text-align: left;
   margin-top: 5px;
 }
-/* line 139, ../sass/components/_form.sass */
+/* line 144, ../sass/components/_form.sass */
 .error.center {
   text-align: center;
 }
-/* line 141, ../sass/components/_form.sass */
+/* line 146, ../sass/components/_form.sass */
 .error.pl {
   padding-left: 28px;
 }
 
-/* line 144, ../sass/components/_form.sass */
+/* line 149, ../sass/components/_form.sass */
 .field-description {
   font-size: 12px;
   text-align: left;
   color: #bcbcbc;
 }
-/* line 149, ../sass/components/_form.sass */
+/* line 154, ../sass/components/_form.sass */
 .field-description.red {
   color: #f20f0f;
 }
-/* line 151, ../sass/components/_form.sass */
+/* line 156, ../sass/components/_form.sass */
 .field-description.pl {
   padding-left: 28px;
 }

@@ -77,7 +77,7 @@
         <list-row>
             <upload-image :value="avatar"
                           :apiUrl="uploadAvatarUrl"
-                          :folderUrl="userApi.pictureFolderUrl"
+                          :folderUrl="avatarFolderUrl"
                           @before-upload="beforeImageUpload"
                           @input="afterImageUpload"
                           @error="onPictureError"
@@ -108,6 +108,7 @@
     import Switcher from "@/components/forms/Switcher";
     import {addToLoader, removeFromLoader} from "@/store/app/app.types";
     import UserTest from "@/modules/user/models/UserTest";
+    import User from "@/modules/user/models/User";
 
     const { mapActions: mapAppActions } = createNamespacedHelpers('app');
     const { mapState, mapGetters, mapActions } = createNamespacedHelpers('user');
@@ -123,9 +124,11 @@
             sidebar: Object
         },
         computed: {
-            userApi: ()=>ApiConfig.urls.user,
             uploadAvatarUrl(){
-                return ApiConfig.baseUrl + this.userApi.uploadPicture;
+                return ApiConfig.baseUrl + ApiConfig.urls.user.uploadPicture;
+            },
+            avatarFolderUrl(){
+                return User.avatarFolderUrl() +'/small';
             },
             options: ()=>ListConfig,
             ...mapGetters(['foodString']),

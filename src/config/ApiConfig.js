@@ -14,7 +14,7 @@ const ApiConfig = {
                 acceptRequest: '/api/event/acceptRequest',
                 rejectRequest: '/api/event/rejectRequest',
                 uploadPicture: '/api/event/uploadPicture',
-                pictureFolderUrl: 'http://fottler/uploads/event',
+                pictureFolderUrl: '/uploads/event',
             },
             eventCategory: {
                 add: '/api/category/add',
@@ -42,7 +42,7 @@ const ApiConfig = {
                 getOne: '/api/user/getOne',
                 changeFriendStatus: '/api/user/changeFriendStatus',
                 uploadPicture: '/api/user/uploadPicture',
-                pictureFolderUrl: 'http://fottler/uploads/user',
+                pictureFolderUrl: '/uploads/user',
             }
         }
     },
@@ -60,8 +60,8 @@ const ApiConfig = {
                 removeFromFavorites: '/test_json/removeFromFavorites.json',
                 acceptRequest: '/test_json/accept_event_request.json',
                 rejectRequest: '/test_json/accept_event_request.json',
-                uploadPicture: 'http://fottler1/upload.php',
-                pictureFolderUrl: 'http://fottler1/uploads/event',
+                uploadPicture: '/upload.php',
+                pictureFolderUrl: '/uploads/event',
             },
             eventCategory: {
                 add: '/test_json/add_category.json',
@@ -88,8 +88,8 @@ const ApiConfig = {
                 getByEvent: '/test_json/users.json',
                 getOne: '/test_json/user_single.json',
                 changeFriendStatus: '/test_json/change_friend_status.json',
-                uploadPicture: 'http://fottler1/upload.php',
-                pictureFolderUrl: 'http://fottler1/uploads/user',
+                uploadPicture: '/upload.php',
+                pictureFolderUrl: '/uploads/user',
             }
         }
     }

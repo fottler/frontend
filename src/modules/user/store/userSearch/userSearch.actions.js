@@ -7,6 +7,7 @@ const actions = {
         const result = await User.getAll({...state.filter});
 
         if(VuexFormHelper.isSuccess(result.status)){
+            result.users = User.formatAllAfterLoad(result.users);
             dispatch(setAll, result.users);
             return true;
         }

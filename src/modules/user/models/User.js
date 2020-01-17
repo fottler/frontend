@@ -115,13 +115,16 @@ export default class User extends Model {
     }
 
 
-    static avatarUrl(pictureName, subFolder = ''){
+    static avatarFolderUrl(){
+        return ApiConfig.baseUrl + ApiConfig.urls.user.pictureFolderUrl;
+    }
+    static avatarUrl(pictureName, subFolder = 'origin'){
         const subFolderPath = '/'+ (subFolder ? subFolder +'/' : '');
 
-        return ApiConfig.urls.user.pictureFolderUrl + subFolderPath + pictureName;
+        return User.avatarFolderUrl() + subFolderPath + pictureName;
     }
     static bigAvatarUrl(pictureName){
-        return User.avatarUrl(pictureName, 'big');
+        return User.avatarUrl(pictureName, 'medium');
     }
     static smallAvatarUrl(pictureName){
         return User.avatarUrl(pictureName, 'small');
@@ -153,10 +156,16 @@ export default class User extends Model {
         return preferences.map(item => ''+item.id);
     }
     static formatAfterLoad(user){
-        user.food_preferences = User.preferencesToIdsArray(user.food_preferences);
-        user.drink_preferences = User.preferencesToIdsArray(user.drink_preferences);
-
+        if(user.food_preferences){
+            user.food_preferences = User.preferencesToIdsArray(user.food_preferences);
+        }
+        if(user.drink_preferences){
+            user.drink_preferences = User.preferencesToIdsArray(user.drink_preferences);
+        }
         return user;
+    }
+    static formatAllAfterLoad(users){
+        return users.map(user => User.formatAfterLoad(user));
     }
 
 }

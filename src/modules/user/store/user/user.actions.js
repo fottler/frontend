@@ -30,6 +30,7 @@ const actions = {
             const result = await VuexFormHelper.save(commit, state.editableUser, User.edit);
 
             if(result){
+                result.user = User.formatAfterLoad(result.user);
                 commit(setUser, result.user);
                 return true;
             }

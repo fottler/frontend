@@ -38,7 +38,9 @@
         },
         computed: {
             eventRequest(){
-                return this.user.event_requests.length && this.user.event_requests[0];
+                return this.user.event_requests
+                    && this.user.event_requests.length
+                    && this.user.event_requests[0];
             },
             ...mapGetters(['sentFriendRequestToMe']),
         },

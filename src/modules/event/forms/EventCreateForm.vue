@@ -92,7 +92,7 @@
         <div class="list-row">
             <upload-image :value="picture"
                           :apiUrl="uploadPictureUrl"
-                          :folderUrl="eventApi.pictureFolderUrl"
+                          :folderUrl="pictureFolderUrl"
                           @before-upload="beforeImageUpload"
                           @input="afterImageUpload"
                           @error="onPictureError"></upload-image>
@@ -119,6 +119,7 @@
     import ListRow from "@/components/common/ListRow";
     import Config from "@/config/Config";
     import {addToLoader, removeFromLoader} from "@/store/app/app.types";
+    import Event from "@/modules/event/models/Event";
 
     const { mapActions: mapAppActions } = createNamespacedHelpers('app');
     const { mapGetters: mapCategoryGetters } = createNamespacedHelpers('eventCategory');
@@ -145,9 +146,11 @@
                     ? 'Осталось '+ symbolsLeft +' символов'
                     : 'Превышен лимит символов';
             },
-            eventApi: ()=>ApiConfig.urls.event,
             uploadPictureUrl(){
-                return ApiConfig.baseUrl + this.eventApi.uploadPicture;
+                return ApiConfig.baseUrl + ApiConfig.urls.event.uploadPicture;
+            },
+            pictureFolderUrl(){
+                return Event.pictureFolderUrl() +'/small';
             },
             ...mapCategoryGetters(['categoriesString']),
             ...mapGetters(['foodString', 'drinksString', 'membersString']),
