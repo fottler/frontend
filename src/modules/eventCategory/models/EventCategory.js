@@ -1,4 +1,3 @@
-
 import ServerRequest from '@/core/ServerRequest'
 import * as yup from "yup";
 import Model from "@/core/Model";

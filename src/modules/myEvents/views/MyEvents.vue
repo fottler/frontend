@@ -16,7 +16,9 @@
         <div id="my-events">
             <div class="container">
 
-                <div class="row">
+                <div v-if="events.length"
+                     class="row">
+
                     <div class="col-12 event-view-types">
                         <a href="#"
                            :class="{active: !mapShown}"
@@ -43,7 +45,7 @@
     import sidebarHandler from "@/mixins/sidebarHandler";
     import MenuSwitcher from "@/components/menu/MenuSwitcher";
 
-    const { mapState, mapActions } = createNamespacedHelpers('myEvents');
+    const { mapState, mapGetters, mapActions } = createNamespacedHelpers('myEvents');
 
     export default {
         name: 'MyEvents',
@@ -52,6 +54,9 @@
         computed: {
             filterList: ()=>ListConfig.filter.myEvents,
             ...mapState(['mapShown', 'filter']),
+            ...mapGetters({
+                events: 'getAll'
+            }),
         },
         created(){
             this.loadAll();
