@@ -171,6 +171,12 @@ export default class Event extends Model {
         if(event.drink_preferences){
             event.drink_preferences = Event.preferencesToIdsArray(event.drink_preferences);
         }
+        if(event.lat){
+            event.lat = Number(event.lat);
+        }
+        if(event.lng){
+            event.lng = Number(event.lng);
+        }
         return event;
     }
     static formatAllAfterLoad(events){

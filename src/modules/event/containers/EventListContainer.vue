@@ -1,6 +1,7 @@
 <template>
     <div>
-        <List class="row event-list"
+        <List v-show="events.length"
+              class="row event-list"
               item-class="col-6 col-sm-4"
               :items="events"
               v-slot="{index, item}">
@@ -12,6 +13,11 @@
                         @add-to-favorites="_addToFavorites(item.id)"
                         @remove-from-favorites="_removeFromFavorites(item.id)"></event-item>
         </List>
+
+        <div v-show="!events.length"
+             class="empty-list">
+            {{emptyListContent}}
+        </div>
     </div>
 </template>
 
@@ -20,6 +26,7 @@
     import EventItem from "@/modules/event/components/EventItem";
     import {addToFavorites, removeFromFavorites} from "@/store/types";
     import { createNamespacedHelpers } from 'vuex'
+    import Config from "@/config/Config";
 
     const { mapActions } = createNamespacedHelpers('favorite');
     const { mapState: mapUserInfoState } = createNamespacedHelpers('user');
@@ -28,9 +35,13 @@
         name: 'EventListContainer',
         components: {EventItem, List},
         props: {
-            events: Array
+            events: Array,
+            emptyListText: String
         },
         computed: {
+            emptyListContent(){
+                return this.emptyListText || Config.message.listIsEmpty;
+            },
             ...mapUserInfoState(['user']),
         },
         methods: {

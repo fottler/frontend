@@ -162,6 +162,12 @@ export default class User extends Model {
         if(user.drink_preferences){
             user.drink_preferences = User.preferencesToIdsArray(user.drink_preferences);
         }
+        if(user.lat){
+            user.lat = Number(user.lat);
+        }
+        if(user.lng){
+            user.lng = Number(user.lng);
+        }
         return user;
     }
     static formatAllAfterLoad(users){

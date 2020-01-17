@@ -1,6 +1,7 @@
 <template>
     <div>
         <event-list-container :events="events"
+                              :empty-list-text="config.message.nothingFound"
                               @item-click="open"></event-list-container>
 
         <Sidebar class="right-sidebar w-100 map-sidebar home-map-sidebar"
@@ -43,6 +44,7 @@
     } from "@/modules/event/store/event/event.types";
     import EventListMap from "@/modules/event/components/EventListMap";
     import Sidebar from "@/components/common/Sidebar";
+    import Config from "@/config/Config";
 
     const { mapState, mapGetters, mapActions } = createNamespacedHelpers('home');
 
@@ -50,6 +52,7 @@
         name: 'HomeEventList',
         components: {Sidebar, EventListMap, EventViewContainer, EventListContainer},
         computed: {
+            config: ()=>Config,
             ...mapState([
                 'mapIsOpened',
                 'chatIsOpened',

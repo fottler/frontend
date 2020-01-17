@@ -51,6 +51,10 @@ const Config = {
                 threw_error: 'Произошла ошибка #K.2'
             }
         },
+    },
+    message: {
+        listIsEmpty: 'Здесь пока пусто',
+        nothingFound: 'Ничего не найдено'
     }
 };
 export default Config;

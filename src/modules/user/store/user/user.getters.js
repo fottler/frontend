@@ -15,6 +15,9 @@ const getters = {
     avatarUrl(state){
         return User.avatarUrl(state.user.avatar);
     },
+    isMyId: (state)=>(id)=>{
+        return state.user.id === id;
+    },
     //editable user
     foodString(state){
         return Event.foodString(state.editableUser.food_preferences);

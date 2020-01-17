@@ -25,6 +25,7 @@
     import UserList from "@/modules/user/components/UserList";
 
     const { mapGetters, mapActions } = createNamespacedHelpers('userSearch');
+    const { mapGetters: mapUserInfoGetters } = createNamespacedHelpers('user');
 
     export default {
         name: 'UserSearch',
@@ -32,13 +33,19 @@
         mixins: [sidebarHandler],
         computed: {
             ...mapGetters({users: 'getAll'}),
+            ...mapUserInfoGetters(['isMyId']),
         },
         created(){
             this.loadAll();
         },
         methods: {
             userClick(id) {
-                this.$router.push('/user/'+id);
+                if(this.isMyId(id)){
+                    this.$router.push('/profile');
+                }
+                else{
+                    this.$router.push('/user/'+id);
+                }
             },
             ...mapActions([ loadAll ])
         }

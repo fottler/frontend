@@ -41,7 +41,8 @@
 
             <event-user-list v-if="membersIsOpened"
                              :owner="owner" 
-                             :users="users"></event-user-list>
+                             :users="users"
+                             :my-id="user.id"></event-user-list>
 
             <event-map v-else-if="mapIsOpened"
                        :event="event"></event-map>

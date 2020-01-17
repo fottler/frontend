@@ -28,11 +28,17 @@
         components: {UserItem, UserList},
         props: {
             owner: Object,
-            users: Array
+            users: Array,
+            myId: Number
         },
         methods: {
             userClick(id) {
-                this.$router.push('/user/'+id);
+                if(this.myId === id){
+                    this.$router.push('/profile');
+                }
+                else{
+                    this.$router.push('/user/'+id);
+                }
             }
         }
     }
