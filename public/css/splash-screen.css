@@ -1,8 +1,9 @@
 #splash-screen {
-    display: none;
     position: fixed;
     height: 100vh;
     width: 100%;
+    top: 0;
+    left: 0;
     background: #ffffff;
 }
 #splash-screen img {
@@ -16,7 +17,4 @@
     -ms-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-}
-[v-cloak] {
-    display: block !important;
 }

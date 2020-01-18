@@ -4,7 +4,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Вилка и Бутылка</title>
 
+    <link href="<%= BASE_URL %>css/splash-screen.css" rel="preload" as="style">
+    <link href="<%= BASE_URL %>images/icons/logo.svg" rel="preload" as="image">
     <link href="<%= BASE_URL %>css/splash-screen.css" rel="stylesheet">
+
     <link href="<%= BASE_URL %>bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBM1QlScJHa1a4EkT3cGosXEua3iCniD34&libraries=places"></script>
 
@@ -45,8 +48,9 @@
     </noscript>
     <div id="app">
 
-      <div id="splash-screen" v-cloak>
-        <img src="<%= BASE_URL %>images/icons/logo.svg" alt="Вилка и Бутылка">
+      <div id="splash-screen">
+        <img src="<%= BASE_URL %>images/icons/logo.svg"
+             alt="Вилка и Бутылка">
       </div>
 
     </div>

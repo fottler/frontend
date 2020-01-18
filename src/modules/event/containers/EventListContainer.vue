@@ -40,7 +40,7 @@
         },
         computed: {
             emptyListContent(){
-                return this.emptyListText || Config.message.listIsEmpty;
+                return this.emptyListText || Config.message.eventListIsEmpty;
             },
             ...mapUserInfoState(['user']),
         },

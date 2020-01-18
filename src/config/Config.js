@@ -54,6 +54,8 @@ const Config = {
     },
     message: {
         listIsEmpty: 'Здесь пока пусто',
+        userListIsEmpty: 'Здесь пока никого нет',
+        eventListIsEmpty: 'Здесь пока ничего нет',
         nothingFound: 'Ничего не найдено'
     }
 };
