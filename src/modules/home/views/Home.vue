@@ -12,7 +12,8 @@
                                class="search-input"
                                placeholder="Поиск"
                                v-model.lazy="text"
-                               @keyup.enter="searchApply">
+                               @keyup.enter="searchApply"
+                               ref="searchInput">
                     </td>
 
                     <td class="button-col">
@@ -111,6 +112,8 @@
         },
         methods: {
             searchApply(event){
+                this.$refs.searchInput.blur();
+
                 this[search](event.target.value);
             },
             ...mapCategoryActions({

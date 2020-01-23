@@ -139,8 +139,8 @@ POST /api/event/add
     category: [1,2,3],
     food_preferences: [1,2,3],
     drink_preferences: [1,2,3],
-    males_number: 1
-    females_number: 1
+    max_males_number: 1,
+    max_females_number: 1,
     picture: "picture.png"
 ```
 Ответ:

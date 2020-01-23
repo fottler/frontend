@@ -5,7 +5,7 @@
 
         <p class="font-16 mb-10">Произошла ошибка.</p>
         <p>Перезагрузите страницу и попробуйте ещё раз</p>
-        <p>
+        <p class="mb-0">
             <a href="#"
                class="button yellow-button w-auto"
                @click.prevent="refresh">Перезагрузить</a>

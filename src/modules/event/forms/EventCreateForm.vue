@@ -59,11 +59,11 @@
                   icon-top="13"
                   icon-left="12">
             <form-sidebar-switcher title="Количество людей"
-                                   :value="membersString"
+                                   :value="maxMembersString"
                                    @click="showSidebar(sidebar.members.type)"></form-sidebar-switcher>
-            <error :text="errors.males_number"></error>
-            <error v-if="!errors.males_number"
-                   :text="errors.females_number"></error>
+            <error :text="errors.max_males_number"></error>
+            <error v-if="!errors.max_males_number"
+                   :text="errors.max_females_number"></error>
         </list-row>
 
         <list-row class="bb"
@@ -80,7 +80,8 @@
             <input type="text"
                    class="w-100 pl"
                    placeholder="Введите краткое описание"
-                   v-model="about"
+                   :value="about"
+                   @input="about = $event.target.value"
                    @keyup.enter="onSubmit">
             <error :text="errors.about"
                    class="pl"></error>
@@ -153,7 +154,7 @@
                 return Event.pictureFolderUrl() +'/small';
             },
             ...mapCategoryGetters(['categoriesString']),
-            ...mapGetters(['foodString', 'drinksString', 'membersString']),
+            ...mapGetters(['foodString', 'drinksString', 'maxMembersString']),
             ...mapState(['errors']),
             ...mapFields(['title', 'category', 'datetime', 'about', 'picture', 'address'])
         },

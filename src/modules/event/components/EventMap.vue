@@ -37,7 +37,8 @@
         async mounted(){
             this.map = new Map(
                 this.$refs.mapWrapper,
-                Config.map.zoom
+                Config.map.zoom,
+                ()=>{}
             );
             this.marker = new Marker(
                 this.map.getMapObject(),

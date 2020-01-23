@@ -14,5 +14,10 @@ export default class MapUtils {
             error: message
         };
     }
+    static formatAddress(address){
+        address = address.replace(/, \d{6}$/, ''); //removing of the postal code
+        address = address.replace(/, Россия$/, '');//removing of the country name
+        return address;
+    }
 
 }

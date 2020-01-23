@@ -9,10 +9,10 @@ const getters = {
     drinksString(state){
         return Event.drinksString(state.newEvent.drink_preferences);
     },
-    membersString(state){
+    maxMembersString(state){
         const
-            males = state.newEvent.males_number,
-            females = state.newEvent.females_number,
+            males = state.newEvent.max_males_number,
+            females = state.newEvent.max_females_number,
             total = parseInt(males) + parseInt(females);
 
         //todo single, plural

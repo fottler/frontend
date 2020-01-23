@@ -12,10 +12,14 @@ export default class PlacesService {
 
             if (status === 'OK') {
                 if (result) {
-                    locationObj.placeName = result.name;
-                    locationObj.address = result.formatted_address;
-
-                    return locationObj;
+                    return MapUtils.success(
+                        locationObj.lat,
+                        locationObj.lng,
+                        MapUtils.formatAddress(result.formatted_address),
+                        null,
+                        locationObj.placeId,
+                        result.name
+                    );
                 }
                 return this.zeroResults();
             }

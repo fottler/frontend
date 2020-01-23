@@ -18,7 +18,7 @@ export default class PhoneMask {
         formatted = formatted || '';
         formatted = this.containsPrefix(formatted)
             ? this.cutOffPrefix(formatted)
-            : formatted;
+            : '';
 
         return formatted
             .replace(/\D/g, '')

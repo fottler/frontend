@@ -523,7 +523,7 @@ p.description {
   font-weight: 300;
   font-size: 14px;
   color: #35364f;
-  padding: 0 30px 20px;
+  padding: 0 30px 35px;
 }
 @media (min-width: 420px) {
   /* line 61, ../sass/components/_modal.sass */
@@ -1932,8 +1932,9 @@ label.radio-wrapper.wide .radio {
 /* line 34, ../sass/pages/_app.sass */
 .sidebar-wrapper.navigation .content .navigation-list > div .list-row a {
   color: #000000;
+  display: block;
 }
-/* line 37, ../sass/pages/_app.sass */
+/* line 38, ../sass/pages/_app.sass */
 .sidebar-wrapper.navigation .content .navigation-list > div .list-row.unread:after {
   content: "";
   position: absolute;
@@ -1945,7 +1946,7 @@ label.radio-wrapper.wide .radio {
   background: #e7b848;
 }
 
-/* line 48, ../sass/pages/_app.sass */
+/* line 49, ../sass/pages/_app.sass */
 .logout-modal a.button {
   margin: 0 2px;
 }

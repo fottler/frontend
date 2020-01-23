@@ -20,12 +20,12 @@
 
             <div v-if="modalIs(modal.types.applySuccess)">
                 <p>Ваша заявка отправлена!</p>
-                <p>Ожидайте подтверждение от создателя события</p>
+                <p class="mb-0">Ожидайте подтверждение от создателя события</p>
             </div>
 
             <div v-else-if="modalIs(modal.types.applyForGuest)">
                 <p>Чтобы подать заявку на событие необходимо авторизоваться</p>
-                <p>
+                <p class="mb-0">
                     <a href="#"
                        class="button yellow-button"
                        @click.prevent="$router.push('/login/')">Войти</a>

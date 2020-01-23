@@ -25,15 +25,20 @@
         watch: {
             events(){
                 this.markerFactory.setAll(this.events);
+
+                if(!this.events.length){
+                    this.map.setCenterToMoscow();
+                }
             }
         },
         async mounted(){
             this.map = new Map(
                 this.$refs.mapWrapper,
                 Config.map.zoom,
-                null,
+                ()=>{},
                 Constants.EVENT_LIST_MAP
             );
+
             this.markerFactory = new MarkerFactory(
                 this.map.getMapObject(),
                 Config.map.markerIcon.src,
@@ -43,7 +48,9 @@
                 }
             );
 
-            this.markerFactory.setAll(this.events);
+            if(this.events.length){
+                this.markerFactory.setAll(this.events);
+            }
         },
         destroyed(){
             this.markerFactory.destroy();

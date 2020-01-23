@@ -12,6 +12,7 @@
 
         <user-list class="friends-list"
                    :users="users"
+                   :empty-list-text="config.message.nobodyFound"
                    @item-click="userClick"></user-list>
     </div>
 </template>
@@ -23,6 +24,7 @@
     import Sidebar from "@/components/common/Sidebar";
     import UserFilterContainer from "@/modules/user/containers/UserFilterContainer";
     import UserList from "@/modules/user/components/UserList";
+    import Config from "@/config/Config";
 
     const { mapGetters, mapActions } = createNamespacedHelpers('userSearch');
     const { mapGetters: mapUserInfoGetters } = createNamespacedHelpers('user');
@@ -32,6 +34,7 @@
         components: {UserList, UserFilterContainer, Sidebar},
         mixins: [sidebarHandler],
         computed: {
+            config: ()=>Config,
             ...mapGetters({users: 'getAll'}),
             ...mapUserInfoGetters(['isMyId']),
         },

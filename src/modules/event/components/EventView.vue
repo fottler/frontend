@@ -22,8 +22,8 @@
                    @click.prevent="$emit('open-map', event.id)">{{event.address}}</a>
             </div>
             <div class="people-wrapper">
-                <span>{{event.males_number}}/{{personsNumber}}</span>
-                <span>{{event.females_number}}/{{personsNumber}}</span>
+                <span>{{event.males_number}}/{{event.max_males_number}}</span>
+                <span>{{event.females_number}}/{{event.max_females_number}}</span>
 
                 <a href="#"
                    :class="{disabled: !isOwnerOrMember}"
@@ -76,9 +76,6 @@
             },
             pictureUrl(){
                 return Event.bigPictureUrl(this.event.picture);
-            },
-            personsNumber(){
-                return this.event.males_number + this.event.females_number;
             },
             foodString(){
                 return Event.foodString(this.event.food_preferences);

@@ -13,11 +13,14 @@ export default class Geocoder {
                 if (results[0]) {
                     const result = results[0];
 
-                    locationObj.city = Geocoder.getCityFromResult(result);
-                    locationObj.placeName = result.name;
-                    locationObj.address = result.formatted_address;
-
-                    return locationObj;
+                    return MapUtils.success(
+                        locationObj.lat,
+                        locationObj.lng,
+                        MapUtils.formatAddress(result.formatted_address),
+                        Geocoder.getCityFromResult(result),
+                        null,
+                        result.name
+                    );
                 }
                 return this.zeroResults();
             }
@@ -43,7 +46,7 @@ export default class Geocoder {
     static getCityFromResult(result){
         return result.address_components.reduce((prevValue, item)=>{
             return item.types.includes('locality') ? item.long_name : prevValue;
-        });
+        }, null);
     }
     zeroResults(){
         return MapUtils.error(this.errorMessages.zero_results);

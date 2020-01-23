@@ -47,16 +47,28 @@ describe('PhoneMask.formattedToRaw', () => {
     const result = fabric().formattedToRaw('+7 (961) ');
     expect(result).to.equal('961');
   });
-  it('correct raw from short formatted without leading 7', () => {
+  /*it('correct raw from short formatted without leading 7', () => {
     const result = fabric().formattedToRaw('+ (961) ');
     expect(result).to.equal('961');
-  });
+  });*/
   it('correct raw from empty', () => {
     const result = fabric().formattedToRaw('');
     expect(result).to.equal('');
   });
   it('correct raw from non numeric', () => {
     const result = fabric().formattedToRaw('+te st');
+    expect(result).to.equal('');
+  });
+  it('correct raw from number before +7', () => {
+    const result = fabric().formattedToRaw('9+7');
+    expect(result).to.equal('');
+  });
+  it('correct raw from number before +7 and numbers after', () => {
+    const result = fabric().formattedToRaw('9+7 (611)');
+    expect(result).to.equal('');
+  });
+  it('correct raw from number before +7 and numbers after. #2', () => {
+    const result = fabric().formattedToRaw('+97 (611)');
     expect(result).to.equal('');
   });
 });

@@ -2,6 +2,7 @@
     <div class="menu">
         <GuestMenu v-if="isGuest"></GuestMenu>
         <AuthorizedMenu v-if="!isGuest"
+                        :authorised="authorised"
                         :user="user"
                         :avatarUrl="avatarUrl"
                         @logout="$emit('logout')"></AuthorizedMenu>
@@ -21,6 +22,7 @@
         props: {
             user: Object,
             isGuest: Boolean,
+            authorised: Boolean,
             avatarUrl: String
         }
     }

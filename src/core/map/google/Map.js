@@ -22,6 +22,8 @@ export default class Map {
     setupNewMap(zoom, onClick){
         this.cleanOldMap();
         this.map().setZoom(zoom);
+        //if we don't add any of markers/geolocation/etc we need to setCenter or the map won't appear
+        this.setCenterToMoscow();
 
         if(onClick){
             this.map().addListener('click', function(event){
@@ -41,13 +43,11 @@ export default class Map {
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             mapTypeControl: false,
             streetViewControl: false,
-            //clickableIcons: false
+            gestureHandling: 'greedy'
         };
         this.setMapObject(
             new google.maps.Map(elementWrapper.firstChild, options)
         );
-        //if we don't add any of markers/geolocation/etc we need to setCenter or the map won't appear
-        this.setCenterToMoscow();
     }
     reuse(elementWrapper){
         elementWrapper.removeChild(

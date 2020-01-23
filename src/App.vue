@@ -8,6 +8,7 @@
             <Menu :user="user"
                   :avatarUrl="avatarUrl"
                   :is-guest="isGuest"
+                  :authorised="authorised"
                   @logout="onLogoutClick"></Menu>
         </Sidebar>
 
@@ -54,7 +55,7 @@
             ...mapGetters(['loaderIsShown']),
             ...mapUserState(['user']),
             ...mapUserGetters(['avatarUrl']),
-            ...mapAuthGetters(['isGuest'])
+            ...mapAuthGetters(['isGuest', 'authorised'])
         },
         watch: {
             $route(){

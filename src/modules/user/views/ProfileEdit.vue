@@ -19,9 +19,7 @@
 
         <Modal class="service-modal"
                v-model="modal.shown">
-            <div>
-                <p>Ваши изменения успешно сохранены.</p>
-            </div>
+            <div>Ваши изменения успешно сохранены.</div>
         </Modal>
     </div>
 </template>

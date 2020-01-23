@@ -1,6 +1,7 @@
 <template>
     <div>
-        <div class="padding-around bb pb-12">
+        <div v-if="authorised"
+             class="padding-around bb pb-12">
             <profile-main class="condensed"
                           :user="user"
                           :avatarUrl="avatarUrl">
@@ -82,7 +83,7 @@
 
                             <p class="mb-25">Вы уверены что хотите выйти?</p>
 
-                            <table class="w-100 mb-15">
+                            <table class="w-100">
                                 <tr>
                                     <td class="right">
                                         <a href="#"
@@ -112,6 +113,7 @@
                         components: {ProfileMain, ListRow, Modal},
                         mixins: [modalHandler],
                         props: {
+                            authorised: Boolean,
                             user: Object,
                             avatarUrl: String
                         },

@@ -14,6 +14,8 @@ export default class EventTest extends Model {
         drink_preferences: ['3'],
         males_number: 2,
         females_number: 3,
+        max_males_number: 5,
+        max_females_number: 7,
         picture: 'sS9mZKueqy.jpg',
         is_favorite: null,
         status: null,//status in event: applied a request, member, owner, etc

@@ -25,8 +25,8 @@
             </table>
 
             <div class="people-wrapper">
-                <span>{{item.males_number}}/{{personsNumber}}</span>
-                <span>{{item.females_number}}/{{personsNumber}}</span>
+                <span>{{item.males_number}}/{{item.max_males_number}}</span>
+                <span>{{item.females_number}}/{{item.max_females_number}}</span>
             </div>
         </div>
     </div>
@@ -52,9 +52,6 @@
             },
             beautifulDate(){
                 return DateUtil.toHumanReadable(this.item.datetime);
-            },
-            personsNumber(){
-                return this.item.males_number + this.item.females_number;
             }
         },
         methods: {

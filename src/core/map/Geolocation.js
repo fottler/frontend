@@ -28,7 +28,10 @@ export default class Geolocation {
         const networkTimeout = this.networkTimeout;
 
         return await new Promise(function(resolve, reject){
-            navigator.geolocation.getCurrentPosition(resolve, reject, {timeout: networkTimeout});
+            navigator.geolocation.getCurrentPosition(resolve, reject, {
+                enableHighAccuracy: true,
+                timeout: networkTimeout
+            });
         });
     }
     getErrorMessage(errorCode){

@@ -14,9 +14,7 @@
 
         <Modal class="service-modal"
                v-model="modal.shown">
-            <div>
-                <p>Событие успешно создано.</p>
-            </div>
+            <div>Событие успешно создано.</div>
         </Modal>
     </div>
 </template>

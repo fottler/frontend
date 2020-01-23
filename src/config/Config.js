@@ -27,18 +27,17 @@ const Config = {
         }
     },
     map: {
-        apiKey: 'AIzaSyBM1QlScJHa1a4EkT3cGosXEua3iCniD34',
         zoom: 14,
         markerIcon: {
             src: '/images/icons/marker.svg',
-            height: 25,
+            height: 32,
         },
 
         geolocation: {
             networkTimeout: 10000,
             errorMessages: {
-                1: 'Разрешите доступ к вашей геопозиции для продолжения',
-                2: 'Местоположение не доступно',
+                1: 'Включите геолокацию на устройстве или разрешите доступ к вашей геопозиции для продолжения',
+                2: 'Местоположение не доступно. Возможно ваше устройство не поддерживает геолокацию',
                 3: 'Время запроса вашей геопозиции превысило лимит',
                 browser_support: 'Ваш браузер не поддерживает геолокацию',
                 default: 'Возникла ошибка в геолокации'
@@ -56,7 +55,8 @@ const Config = {
         listIsEmpty: 'Здесь пока пусто',
         userListIsEmpty: 'Здесь пока никого нет',
         eventListIsEmpty: 'Здесь пока ничего нет',
-        nothingFound: 'Ничего не найдено'
+        nothingFound: 'Ничего не найдено',
+        nobodyFound: 'Никто не найден'
     }
 };
 export default Config;

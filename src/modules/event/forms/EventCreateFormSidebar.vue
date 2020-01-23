@@ -32,7 +32,7 @@
                 <input type="number"
                        class="w-100 pl"
                        placeholder="Введите количество мужчин"
-                       v-model.lazy="males_number">
+                       v-model.lazy="max_males_number">
             </list-row>
 
             <list-row class="bb"
@@ -42,7 +42,7 @@
                 <input type="number"
                        class="w-100 pl"
                        placeholder="Введите количество женщин"
-                       v-model.lazy="females_number">
+                       v-model.lazy="max_females_number">
             </list-row>
         </div>
 
@@ -78,7 +78,7 @@
         },
         computed: {
             options: ()=>ListConfig,
-            ...mapFields(['category', 'food_preferences', 'drink_preferences', 'males_number', 'females_number', 'address', 'lat', 'lng'])
+            ...mapFields(['category', 'food_preferences', 'drink_preferences', 'max_males_number', 'max_females_number', 'address', 'lat', 'lng'])
         },
         methods: {
             changeCategory(category){
